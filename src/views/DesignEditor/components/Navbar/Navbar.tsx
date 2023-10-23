@@ -319,22 +319,22 @@ const Navbar = () => {
             <Play size={24} />
           </Button>
 
-          <Button
+          {/* <Button
             size="compact"
             onClick={() => window.location.replace("https://github.com/layerhub-io/react-design-editor")}
             kind={KIND.tertiary}
           >
             <Github size={24} />
-          </Button>
+          </Button> */}
 
-          <Button
+          {/* <Button
             style={{ marginLeft: "0.5rem" }}
             size="compact"
             onClick={() => window.location.replace("https://editor.layerhub.io")}
             kind={KIND.primary}
           >
             Try PRO
-          </Button>
+          </Button> */}
         </Block>
       </Container>
     </ThemeProvider>
