@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useEditor } from "@layerhub-io/react"
 import { useStyletron } from "baseui"
 import { Block } from "baseui/block"
@@ -14,6 +14,8 @@ const Pixabay = () => {
   const setIsSidebarOpen = useSetIsSidebarOpen()
 
   const pixabayResources = useSelector(selectPixabayResources)
+  console.log("pixabayResources" , pixabayResources);
+  
   const addObject = React.useCallback(
     (url: string) => {
       if (editor) {
@@ -26,6 +28,10 @@ const Pixabay = () => {
     },
     [editor]
   )
+  useEffect(() => {
+    // pixabayResources()
+  }, [])
+  
 
   return (
     <Block $style={{ flex: 1, display: "flex", flexDirection: "column" }}>
@@ -47,8 +53,8 @@ const Pixabay = () => {
       <Scrollable>
         <Block padding="0 1.5rem">
           <div style={{ display: "grid", gap: "0.5rem", gridTemplateColumns: "1fr 1fr" }}>
-            {pixabayResources.map((image, index) => {
-              return <ImageItem key={index} onClick={() => addObject(image.src)} preview={image.preview} />
+            {pixabayImages.map((image, index) => {
+              return <ImageItem key={index} onClick={() => addObject(image.webformatURL)} preview={image.previewURL} />
             })}
           </div>
         </Block>

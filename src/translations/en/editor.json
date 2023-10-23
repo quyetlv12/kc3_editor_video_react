@@ -1,16 +1,16 @@
 {
     "panels": {
         "panelsList": {
-            "templates": "Templates",
-            "customize": "Customize",
-            "elements": "Elements",
-            "images": "Images",
+            "templates": "Mẫu",
+            "customize": "Nền",
+            "elements": "Khối",
+            "images": "Hình ảnh",
             "videos": "Videos",
-            "uploads": "Uploads",
-            "text": "Text",
-            "graphics": "Graphics",
+            "uploads": "Tải lên",
+            "text": "Văn bản",
+            "graphics": "Đồ hoạ",
             "pixabay": "Pixabay",
-            "layers": "Layers"
+            "layers": "Lớp"
         }
     }
 }

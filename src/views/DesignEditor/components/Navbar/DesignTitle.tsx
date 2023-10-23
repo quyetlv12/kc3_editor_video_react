@@ -94,7 +94,7 @@ const DesignTitle = () => {
         />
       </Block>
 
-      <StatefulTooltip
+      {/* <StatefulTooltip
         showArrow={true}
         overrides={{
           Inner: {
@@ -115,7 +115,7 @@ const DesignTitle = () => {
         >
           <CloudCheck size={24} />
         </Block>
-      </StatefulTooltip>
+      </StatefulTooltip> */}
     </Block>
   )
 }
