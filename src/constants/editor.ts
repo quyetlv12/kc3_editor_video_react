@@ -197,7 +197,7 @@ export const SAMPLE_TEMPLATES = [
     metadata: {
       animated: false,
     },
-    preview: "https://ik.imagekit.io/scenify/OnktZ7CLGntNeirIYZ_eN8Cm.png",
+    preview: "https://ik.imagekit.io/ixtujdz3rd/font1.png?updatedAt=1698111552567",
   },
   {
     id: "sRQQYw0OOnctiJUBsMg6S",
@@ -367,7 +367,7 @@ export const SAMPLE_TEMPLATES = [
     metadata: {
       animated: false,
     },
-    preview: "https://ik.imagekit.io/scenify/2ZdeFFC6gdlw_LkzDN2J5cHs.png",
+    preview: "https://ik.imagekit.io/ixtujdz3rd/font2.png?updatedAt=1698111552638",
   },
   {
     id: "x2shx-AJICr0dZo32dq9y",
@@ -537,8 +537,282 @@ export const SAMPLE_TEMPLATES = [
     metadata: {
       animated: false,
     },
-    preview: "https://ik.imagekit.io/scenify/hkHXvT7iOVnyZwLIkniU8WpA.png",
+    preview: "https://ik.imagekit.io/ixtujdz3rd/font3.png?updatedAt=1698111552644",
   },
+  {
+    "id": "aCGo61rQoLVU9WaqrDcxG",
+    "layers": [
+        {
+            "id": "background",
+            "name": "Initial Frame",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 0,
+            "top": 0,
+            "width": 1200,
+            "height": 1200,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 1,
+            "scaleY": 1,
+            "type": "Background",
+            "flipX": false,
+            "flipY": false,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": {
+                "color": "#fcfcfc",
+                "blur": 4,
+                "offsetX": 0,
+                "offsetY": 0,
+                "affectStroke": false,
+                "nonScaling": false
+            },
+            "fill": "#F8E71D",
+            "metadata": {}
+        },
+        {
+            "id": "98EdqEwYWtPkLFzmnT7Q3",
+            "name": "StaticText",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 391.78,
+            "top": 441.65,
+            "width": 420,
+            "height": 103.96,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 1,
+            "scaleY": 1,
+            "type": "StaticText",
+            "flipX": false,
+            "flipY": false,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": null,
+            "charSpacing": 0,
+            "fill": "#333333",
+            "fontFamily": "OpenSans-Bold",
+            "fontSize": 92,
+            "lineHeight": 1.16,
+            "text": "SPECIAL",
+            "textAlign": "center",
+            "fontURL": "https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.ttf",
+            "metadata": {}
+        },
+        {
+            "id": "E2mcHFkwGA-MTJcfl3Abs",
+            "name": "StaticPath",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 328,
+            "top": 574.22,
+            "width": 60,
+            "height": 60,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 9.19,
+            "scaleY": 2,
+            "type": "StaticPath",
+            "flipX": false,
+            "flipY": false,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": null,
+            "path": [
+                [
+                    "M",
+                    60,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    0
+                ],
+                [
+                    "Z"
+                ]
+            ],
+            "fill": "#460c0c",
+            "metadata": {}
+        },
+        {
+            "id": "TCU2EB0sH6yMjsN92qRfo",
+            "name": "StaticText",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 398.89,
+            "top": 588.54,
+            "width": 420,
+            "height": 103.96,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 1,
+            "scaleY": 1,
+            "type": "StaticText",
+            "flipX": false,
+            "flipY": false,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": null,
+            "charSpacing": 0,
+            "fill": "#ffffff",
+            "fontFamily": "OpenSans-Bold",
+            "fontSize": 92,
+            "lineHeight": 1.16,
+            "text": "OFFER",
+            "textAlign": "center",
+            "fontURL": "https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.ttf"
+        },
+        {
+            "id": "E2mcHFkwGA-MTJcfl3Abs",
+            "name": "StaticPath",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 290.28,
+            "top": 704.45,
+            "width": 60,
+            "height": 60,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 10.32,
+            "scaleY": 0.18,
+            "type": "StaticPath",
+            "flipX": false,
+            "flipY": true,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": null,
+            "path": [
+                [
+                    "M",
+                    60,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    0
+                ],
+                [
+                    "Z"
+                ]
+            ],
+            "fill": "#161616",
+            "metadata": {}
+        },
+        {
+            "id": "UXU4h1xR-M_oVOkbTw0g6",
+            "name": "StaticPath",
+            "angle": 0,
+            "stroke": null,
+            "strokeWidth": 0,
+            "left": 366.99,
+            "top": 431.72,
+            "width": 60,
+            "height": 60,
+            "opacity": 1,
+            "originX": "left",
+            "originY": "top",
+            "scaleX": 7.77,
+            "scaleY": 0.18,
+            "type": "StaticPath",
+            "flipX": false,
+            "flipY": true,
+            "skewX": 0,
+            "skewY": 0,
+            "visible": true,
+            "shadow": null,
+            "path": [
+                [
+                    "M",
+                    60,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    0
+                ],
+                [
+                    "L",
+                    0,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    60
+                ],
+                [
+                    "L",
+                    60,
+                    0
+                ],
+                [
+                    "Z"
+                ]
+            ],
+            "fill": "#161616",
+            "metadata": {}
+        }
+    ],
+    "name": "Untitled design",
+    "frame": {
+        "width": 1200,
+        "height": 1200
+    },
+    "metadata": {
+        "animated": false
+    },
+    "preview": "https://ik.imagekit.io/ixtujdz3rd/font2.png?updatedAt=1698111552638"
+}
 ]
 
 export const editorFonts = [

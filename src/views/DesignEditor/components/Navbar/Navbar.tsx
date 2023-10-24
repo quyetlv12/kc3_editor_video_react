@@ -39,6 +39,14 @@ const Navbar = () => {
           id: currentScene.id,
           layers: currentScene.layers,
           name: currentScene.name,
+          frame: {
+            width: 1200,
+            height: 1200,
+          },
+          metadata: {
+            animated: false,
+          },
+          preview: "https://ik.imagekit.io/ixtujdz3rd/font2.png?updatedAt=1698111552638",
         }
       }
       return {
@@ -267,7 +275,7 @@ const Navbar = () => {
         <div style={{ color: "#ffffff" , display : 'flex' , justifyItems : 'center' , alignItems : 'center' }}>
           {/* <Logo size={36} /> */}
           <img src={logo} alt="" width={50} />
-          <span className="" style={{ marginLeft : "10px" , fontSize : "1.2rem" , fontWeight : 600}}>King Content Editor</span>
+          <span className="" style={{ marginLeft : "10px" , fontSize : "1.2rem" , fontWeight : 600}}>Kingcontent Editor</span>
         </div>
         <DesignTitle />
         <Block $style={{ display: "flex", alignItems: "center", justifyContent: "flex-end" }}>
