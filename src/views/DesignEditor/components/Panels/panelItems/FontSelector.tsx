@@ -7,12 +7,13 @@ import { useStyletron } from "baseui"
 import { IStaticText } from "@layerhub-io/types"
 import { useEditor } from "@layerhub-io/react"
 import { loadFonts } from "~/utils/fonts"
-import { SAMPLE_FONTS } from "~/constants/editor"
 import { groupBy } from "lodash"
 import Scrollable from "~/components/Scrollable"
 import { Block } from "baseui/block"
 import AngleDoubleLeft from "~/components/Icons/AngleDoubleLeft"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
+import { selectFonts } from "~/store/slices/fonts/selectors"
+import { useSelector } from "react-redux"
 
 const FontSelector = () => {
   const [query, setQuery] = React.useState("")
@@ -22,12 +23,14 @@ const FontSelector = () => {
   const [commonFonts, setCommonFonts] = React.useState<any[]>([])
   const [css] = useStyletron()
   const editor = useEditor()
+  const fonts = useSelector(selectFonts)  
+
 
   React.useEffect(() => {
-    const grouped = groupBy(SAMPLE_FONTS, "family")
+    const grouped = groupBy(fonts, "family")
     const standardFonts = Object.keys(grouped).map((key) => {
       const familyFonts = grouped[key]
-      const standardFont = familyFonts.find((familyFont) => familyFont.postscript_name.includes("-Regular"))
+      const standardFont = familyFonts.find((familyFont) => familyFont?.postscript_name?.includes("-Regular"))
       if (standardFont) {
         return standardFont
       }

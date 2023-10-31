@@ -21,12 +21,14 @@ import TextAlignLeft from "~/components/Icons/TextAlignLeft"
 import TextAlignRight from "~/components/Icons/TextAlignRight"
 import { Slider } from "baseui/slider"
 import useAppContext from "~/hooks/useAppContext"
-import { FONT_SIZES, SAMPLE_FONTS } from "~/constants/editor"
+import { FONT_SIZES } from "~/constants/editor"
 import getSelectionType from "~/utils/get-selection-type"
 import { IStaticText } from "@layerhub-io/types"
 import { getTextProperties } from "../../utils/text"
 import { loadFonts } from "~/utils/fonts"
 import Scrollbar from "@layerhub-io/react-custom-scrollbar"
+import { useSelector } from "react-redux"
+import { selectFonts } from "~/store/slices/fonts/selectors"
 
 interface TextState {
   color: string
@@ -59,11 +61,13 @@ const Text = () => {
   const [state, setState] = React.useState<TextState>(initialOptions)
   const activeObject = useActiveObject() as Required<IStaticText>
   const { setActiveSubMenu } = useAppContext()
+  const fonts = useSelector(selectFonts)
+  
   const editor = useEditor()
 
   React.useEffect(() => {
     if (activeObject && activeObject.type === "StaticText") {
-      const textProperties = getTextProperties(activeObject, SAMPLE_FONTS)
+      const textProperties = getTextProperties(activeObject, fonts)
       setState({ ...state, ...textProperties })
     }
   }, [activeObject])
@@ -71,7 +75,7 @@ const Text = () => {
   React.useEffect(() => {
     let watcher = async () => {
       if (activeObject && activeObject.type === "StaticText") {
-        const textProperties = getTextProperties(activeObject, SAMPLE_FONTS)
+        const textProperties = getTextProperties(activeObject, fonts)
         setState({ ...state, ...textProperties })
       }
     }

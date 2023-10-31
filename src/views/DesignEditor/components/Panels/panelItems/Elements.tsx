@@ -32,7 +32,7 @@ const Elements = () => {
           padding: "1.5rem",
         }}
       >
-        <Block>Elements</Block>
+        <Block>Thành phần</Block>
 
         <Block onClick={() => setIsSidebarOpen(false)} $style={{ cursor: "pointer", display: "flex" }}>
           <AngleDoubleLeft size={18} />
@@ -54,9 +54,9 @@ const Elements = () => {
           </Button>
         </Block> */}
         <Block>
-          <Block $style={{ display: "grid", gap: "8px", padding: "1.5rem", gridTemplateColumns: "1fr 1fr 1fr 1fr" }}>
+          <Block $style={{ display: "grid", gap: "8px", padding: "1.5rem", gridTemplateColumns: "1fr 1fr" }}>
             {graphics.map((graphic, index) => (
-              <ImageItem onClick={() => addObject(graphic)} key={index} preview={graphic.preview} />
+              <ImageItem onClick={() => addObject(graphic)} key={index} preview={graphic.preview} graphic={graphic} />
             ))}
           </Block>
         </Block>
@@ -65,8 +65,10 @@ const Elements = () => {
   )
 }
 
-const ImageItem = ({ preview, onClick }: { preview: any; onClick?: (option: any) => void }) => {
+const ImageItem = ({ preview, onClick, graphic }: { preview: any; onClick?: (option: any) => void; graphic: any }) => {
   const [css] = useStyletron()
+  const pathString = preview.map((segment: any) => segment.join(" ")).join(" ")
+
   return (
     <div
       onClick={onClick}
@@ -74,7 +76,10 @@ const ImageItem = ({ preview, onClick }: { preview: any; onClick?: (option: any)
         position: "relative",
         background: "#f8f8fb",
         cursor: "pointer",
-        borderRadius: "8px",
+        borderRadius: "20px",
+        padding : "7px",
+        textAlign : "center",
+        verticalAlign: "middle",
         overflow: "hidden",
         ":hover": {
           opacity: 1,
@@ -82,16 +87,14 @@ const ImageItem = ({ preview, onClick }: { preview: any; onClick?: (option: any)
         },
       })}
     >
-      <img
-        src={preview}
-        className={css({
-          width: "100%",
-          height: "100%",
-          objectFit: "contain",
-          pointerEvents: "none",
-          verticalAlign: "middle",
-        })}
-      />
+      <svg
+        width="70"
+        height="70"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 600 600"
+      >
+        <path id="svgPath" d={pathString} fill={graphic.fill} />
+      </svg>
     </div>
   )
 }

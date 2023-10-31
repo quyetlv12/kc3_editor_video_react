@@ -18,7 +18,8 @@ export interface IFontFamily {
   version: string
   lastModified: string
   category: string
-  kind: string
+  kind: string;
+  postscript_name?:string;
 }
 
 export interface TextOptions {

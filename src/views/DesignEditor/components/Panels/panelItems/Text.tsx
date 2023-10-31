@@ -10,15 +10,21 @@ import { Block } from "baseui/block"
 import AngleDoubleLeft from "~/components/Icons/AngleDoubleLeft"
 import Scrollable from "~/components/Scrollable"
 import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getFonts } from "~/store/slices/fonts/actions"
+import { selectFonts } from "~/store/slices/fonts/selectors"
 
 const Text = () => {
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
+  const fonts = useSelector(selectFonts)  
+  const dispatch = useDispatch()
 
   const addObject = async () => {
     if (editor) {
       const font: FontItem = {
-        name: "OpenSans-Regular",
+        name: "Yusei Magic",
         url: "https://fonts.gstatic.com/s/opensans/v27/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.ttf",
       }
       await loadFonts([font])
@@ -29,6 +35,7 @@ const Text = () => {
         text: "Add some text",
         fontSize: 92,
         fontFamily: font.name,
+        family : "Yusei Magic",
         textAlign: "center",
         fontStyle: "normal",
         fontURL: font.url,
@@ -38,7 +45,7 @@ const Text = () => {
       editor.objects.add<IStaticText>(options)
     }
   }
-  const addComponent = async (component: any) => {
+  const addComponent = async (component: any) => {    
     if (editor) {
       const fontItemsList: FontItem[] = []
       if (component.objects) {
@@ -64,6 +71,11 @@ const Text = () => {
       editor.objects.add(component)
     }
   }
+  useEffect(() => {
+    getFonts()
+  }, [])
+ 
+  
   return (
     <Block $style={{ flex: 1, display: "flex", flexDirection: "column" }}>
       <Block
@@ -75,7 +87,7 @@ const Text = () => {
           padding: "1.5rem",
         }}
       >
-        <Block>Text</Block>
+        <Block></Block>
 
         <Block onClick={() => setIsSidebarOpen(false)} $style={{ cursor: "pointer", display: "flex" }}>
           <AngleDoubleLeft size={18} />
@@ -94,7 +106,7 @@ const Text = () => {
               },
             }}
           >
-            Add text
+            Thêm văn bản
           </Button>
 
           <Block
@@ -105,7 +117,7 @@ const Text = () => {
               gap: "8px",
             }}
           >
-            {[...textComponents].map((tc) => (
+            {fonts.map((tc) => (
               <TextComponentItem onClick={addComponent} key={tc.id} component={tc} />
             ))}
           </Block>
@@ -122,7 +134,7 @@ interface TextComponent {
   }
 }
 const TextComponentItem = ({ component, onClick }: { component: any; onClick: (option: any) => void }) => {
-  const [css] = useStyletron()
+  const [css] = useStyletron()  
   return (
     <div
       onClick={() => onClick(component.layers[0])}
@@ -141,6 +153,9 @@ const TextComponentItem = ({ component, onClick }: { component: any; onClick: (o
     >
       <div
         className={css({
+          display : "flex",
+          // justifyContent : "center",
+          // alignItems : "center",
           backgroundImage: `linear-gradient(to bottom,
           rgba(0, 0, 0, 0) 0,
           rgba(0, 0, 0, 0.006) 8.1%,
@@ -182,6 +197,11 @@ const TextComponentItem = ({ component, onClick }: { component: any; onClick: (o
           verticalAlign: "middle",
         })}
       />
+      {/* <p className={
+        css({
+        fontFamily : component.category
+        })
+      }>DEMO</p> */}
     </div>
   )
 }

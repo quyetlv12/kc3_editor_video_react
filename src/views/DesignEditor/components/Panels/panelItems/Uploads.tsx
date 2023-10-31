@@ -64,7 +64,7 @@ export default function () {
             padding: "1.5rem",
           }}
         >
-          <Block>Uploads</Block>
+          <Block></Block>
 
           <Block onClick={() => setIsSidebarOpen(false)} $style={{ cursor: "pointer", display: "flex" }}>
             <AngleDoubleLeft size={18} />
@@ -83,7 +83,7 @@ export default function () {
                 },
               }}
             >
-              Computer
+              Tải lên từ máy tính
             </Button>
             <input onChange={handleFileInput} type="file" id="file" ref={inputFileRef} style={{ display: "none" }} />
 

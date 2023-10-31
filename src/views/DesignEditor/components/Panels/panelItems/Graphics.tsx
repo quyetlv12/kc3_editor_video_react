@@ -55,7 +55,7 @@ const Graphics = () => {
           padding: "1.5rem",
         }}
       >
-        <Block>Graphics</Block>
+        <Block></Block>
 
         <Block onClick={() => setIsSidebarOpen(false)} $style={{ cursor: "pointer", display: "flex" }}>
           <AngleDoubleLeft size={18} />
@@ -74,7 +74,7 @@ const Graphics = () => {
             },
           }}
         >
-          Computer
+          Tải lên từ máy tính
         </Button>
       </Block>
       <Scrollable>

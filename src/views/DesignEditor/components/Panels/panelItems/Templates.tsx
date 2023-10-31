@@ -94,7 +94,7 @@ const ImageItem = ({ preview, onClick }: { preview: any; onClick?: (option: any)
           rgba(0, 0, 0, 0.022) 15.5%,
           rgba(0, 0, 0, 0.047) 22.5%,
           rgba(0, 0, 0, 0.079) 29%,
-          rgba(0, 0, 0, 0.117) 35.3%,
+          rgba(161, 144, 144, 0.117) 35.3%,
           rgba(0, 0, 0, 0.158) 41.2%,
           rgba(0, 0, 0, 0.203) 47.1%,
           rgba(0, 0, 0, 0.247) 52.9%,

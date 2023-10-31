@@ -14,10 +14,10 @@ const Pixabay = () => {
   const setIsSidebarOpen = useSetIsSidebarOpen()
 
   const pixabayResources = useSelector(selectPixabayResources)
-  console.log("pixabayResources" , pixabayResources);
   
   const addObject = React.useCallback(
     (url: string) => {
+      
       if (editor) {
         const options = {
           type: "StaticImage",

@@ -51,7 +51,7 @@ const Layers = () => {
           padding: "1.5rem",
         }}
       >
-        <Block>Layers</Block>
+        <Block>Lớp</Block>
 
         <Block onClick={() => setIsSidebarOpen(false)} $style={{ cursor: "pointer", display: "flex" }}>
           <AngleDoubleLeft size={18} />
