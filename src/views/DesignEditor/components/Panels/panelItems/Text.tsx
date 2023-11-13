@@ -135,6 +135,8 @@ interface TextComponent {
 }
 const TextComponentItem = ({ component, onClick }: { component: any; onClick: (option: any) => void }) => {
   const [css] = useStyletron()  
+  console.log("component" , component);
+  
   return (
     <div
       onClick={() => onClick(component.layers[0])}
@@ -154,8 +156,7 @@ const TextComponentItem = ({ component, onClick }: { component: any; onClick: (o
       <div
         className={css({
           display : "flex",
-          // justifyContent : "center",
-          // alignItems : "center",
+          
           backgroundImage: `linear-gradient(to bottom,
           rgba(0, 0, 0, 0) 0,
           rgba(0, 0, 0, 0.006) 8.1%,
@@ -187,7 +188,7 @@ const TextComponentItem = ({ component, onClick }: { component: any; onClick: (o
           },
         })}
       />
-      <img
+      {/* <img
         src={component.preview}
         className={css({
           width: "100%",
@@ -196,12 +197,17 @@ const TextComponentItem = ({ component, onClick }: { component: any; onClick: (o
           pointerEvents: "none",
           verticalAlign: "middle",
         })}
-      />
-      {/* <p className={
+      /> */}
+      <p className={
         css({
-        fontFamily : component.category
+        textAlign : "center",
+        lineHeight : "50px",
+        fontSize : ".8rem",
+        textShadow :" 2px 7px 5px rgba(0,0,0,0.3),  0px -4px 10px rgba(255,255,255,0.3)",
+        fontWeight :"700",
+        fontFamily : component.family
         })
-      }>DEMO</p> */}
+      }>{component.family}</p>
     </div>
   )
 }

@@ -8,6 +8,9 @@ import useSetIsSidebarOpen from "~/hooks/useSetIsSidebarOpen"
 import { getPixabayVideos } from "~/services/pixabay"
 import { getPexelsVideos } from "~/services/pexels"
 import useDesignEditorContext from "~/hooks/useDesignEditorContext"
+import { Button, SIZE } from "baseui/button"
+import { nanoid } from "nanoid"
+import { toBase64 } from "~/utils/data"
 
 const loadVideoResource = (videoSrc: string): Promise<HTMLVideoElement> => {
   return new Promise(function (resolve, reject) {
@@ -49,6 +52,8 @@ const captureFrame = (video: HTMLVideoElement) => {
   })
 }
 
+
+
 const captureDuration = (video: HTMLVideoElement): Promise<number> => {
   return new Promise((resolve) => {
     resolve(video.duration)
@@ -56,6 +61,7 @@ const captureDuration = (video: HTMLVideoElement): Promise<number> => {
 }
 
 const Videos = () => {
+  const inputFileRef = React.useRef<HTMLInputElement>(null)
   const editor = useEditor()
   const setIsSidebarOpen = useSetIsSidebarOpen()
   const [videos, setVideos] = React.useState<any[]>([])
@@ -68,6 +74,38 @@ const Videos = () => {
   const loadPexelsVideos = async () => {
     const videos = (await getPexelsVideos("people")) as any
     setVideos(videos)
+  }
+
+  const handleDropFiles = async (files: FileList) => {
+    const file = files[0]
+
+    const isVideo = file.type.includes("video")
+    const base64 = (await toBase64(file)) as any
+    let preview = base64
+    if (isVideo) {
+      const video = await loadVideoResource(base64)
+      const frame = await captureFrame(video)
+      preview = frame
+    }
+
+    const type = isVideo ? "StaticVideo" : "StaticImage"
+
+    const upload = {
+      id: nanoid(),
+      src: base64,
+      preview: preview,
+      type: type,
+    }
+
+    setVideos([...videos, upload])
+  }
+
+  const handleInputFileRefClick = () => {
+    inputFileRef.current?.click()
+  }
+
+  const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    handleDropFiles(e.target.files!)
   }
   React.useEffect(() => {
     loadPexelsVideos()
@@ -114,6 +152,20 @@ const Videos = () => {
       </Block>
       <Scrollable>
         <Block padding="0 1.5rem">
+        <Button
+              onClick={handleInputFileRefClick}
+              size={SIZE.compact}
+              overrides={{
+                Root: {
+                  style: {
+                    width: "100%",
+                  },
+                },
+              }}
+            >
+              Tải lên từ máy tính
+            </Button>
+            <input onChange={handleFileInput} type="file" id="file" accept="video/mp4,video/x-m4v,video/*"  ref={inputFileRef} style={{ display: "none" }} />
           <div style={{ display: "grid", gap: "8px", gridTemplateColumns: "1fr 1fr" }}>
             {videos.map((video, index) => {
               return <img width="120px" key={index} src={video.preview} onClick={() => addObject(video)} />

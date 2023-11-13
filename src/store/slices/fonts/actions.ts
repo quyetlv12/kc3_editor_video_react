@@ -11,9 +11,7 @@ export const getFonts = createAsyncThunk<void, never, { rejectValue: Record<stri
         .then((response) => response.json())
         .then((data) => {
           // Process the font data from the 'data' object
-          const _data = data.items.map((_elt: any, fontIndex: number) => { 
-            console.log("_elt" , _elt);
-                       
+          const _data = data.items.map((_elt: any, fontIndex: number) => {                        
             return {
               ..._elt,
               id: fontIndex,
@@ -42,18 +40,10 @@ export const getFonts = createAsyncThunk<void, never, { rejectValue: Record<stri
                   flipY: false,
                   skewX: 0,
                   skewY: 0,
-                  // shadow: {
-                  //   color: "#000000",
-                  //   blur: 25,
-                  //   offsetX: 10,
-                  //   offsetY: 10,
-                  //   affectStroke: false,
-                  //   nonScaling: false,
-                  // },
                   visible: true,
                   start: 0,
                   stop: 10,
-                  text: `Font ${_elt.family}`,
+                  text: `${_elt.family}`,
                   fontSize: 44,
                   fontFamily: _elt.family,
                   textAlign: "center",
