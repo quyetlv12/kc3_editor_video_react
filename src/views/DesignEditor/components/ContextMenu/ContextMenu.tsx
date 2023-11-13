@@ -48,7 +48,7 @@ const ContextMenu = () => {
             editor.cancelContextMenuRequest()
           }}
           icon="Duplicate"
-          label="copy"
+          label="Sao chép"
         >
           <Duplicate size={24} />
         </ContextMenuItem>
@@ -58,7 +58,7 @@ const ContextMenu = () => {
             editor.cancelContextMenuRequest()
           }}
           icon="Paste"
-          label="paste"
+          label="Dán"
         >
           <Paste size={24} />
         </ContextMenuItem>
@@ -69,7 +69,7 @@ const ContextMenu = () => {
             editor.cancelContextMenuRequest()
           }}
           icon="Delete"
-          label="delete"
+          label="Xoá"
         >
           <Delete size={24} />
         </ContextMenuItem>
@@ -99,7 +99,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Duplicate"
-            label="copy"
+            label="Sao chép"
           >
             <Duplicate size={24} />
           </ContextMenuItem>
@@ -109,7 +109,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Paste"
-            label="paste"
+            label="Dán"
           >
             <Paste size={24} />
           </ContextMenuItem>
@@ -119,7 +119,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Delete"
-            label="delete"
+            label="Xoá"
           >
             <Delete size={24} />
           </ContextMenuItem>
@@ -130,7 +130,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Forward"
-            label="bring forward"
+            label="Đưa lên trước"
           >
             <BringToFront size={24} />
           </ContextMenuItem>
@@ -140,7 +140,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Backward"
-            label="send backward"
+            label="Đưa xuống dưới"
           >
             <SendToBack size={24} />
           </ContextMenuItem>
@@ -150,7 +150,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Elements"
-            label="Save as component"
+            label="Lưu như phần tử"
           >
             <Elements size={24} />
           </ContextMenuItem>
@@ -161,7 +161,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Locked"
-            label="lock"
+            label="Khoá"
           >
             <Locked size={24} />
           </ContextMenuItem>
@@ -200,7 +200,7 @@ const ContextMenu = () => {
               editor.cancelContextMenuRequest()
             }}
             icon="Unlocked"
-            label="unlock"
+            label="Bỏ khoá"
           >
             <Unlocked size={24} />
           </ContextMenuItem>
